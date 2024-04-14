@@ -1,0 +1,6 @@
+title,genre,totalcapacity,showtimes
+"The Shawshank Redemption",Drama,40,"10:00 AM, 1:00 PM, 4:00 PM, 7:00 PM"
+"The Godfather",Crime,1,"11:00 AM, 2:00 PM, 5:00 PM, 8:00 PM"
+"The Dark Knight",Action,40,"9:00 AM, 12:00 PM, 3:00 PM, 6:00 PM, 9:00 PM"
+"Pulp Fiction",Crime,40,"10:30 AM, 1:30 PM, 4:30 PM, 7:30 PM"
+"Schindler's List",Drama,40,"11:30 AM, 2:30 PM, 5:30 PM, 8:30 PM"
