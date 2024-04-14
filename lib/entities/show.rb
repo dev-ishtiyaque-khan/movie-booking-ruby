@@ -22,6 +22,18 @@ class Show
     @available_seats = generate_seats(total_capacity)
   end
 
+  def reserve_seat(seat_number)
+    available_seats.delete(seat_number)
+  end
+
+  def seat_available?
+    !available_seats.empty?
+  end
+
+  def random_available_seat
+    available_seats.sample
+  end
+
   def to_s
     "#{formatted_show_time} (#{total_available_seats})"
   end

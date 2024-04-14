@@ -37,4 +37,45 @@ RSpec.describe Show do
       expect(show.movie_genre).to eq('Sci-Fi')
     end
   end
+
+  describe '#reserve_seat' do
+    let(:seat_number) { 'A1' }
+    let(:seat_numbers) { ['A1', 'A2', 'A3'] }
+
+    before { allow(show).to receive(:available_seats).and_return(seat_numbers) }
+
+    it 'removes the reserved seat from available seats' do
+      show.reserve_seat(seat_number)
+      expect(show.available_seats).to_not include(seat_number)
+    end
+  end
+
+  describe '#seat_available?' do
+    context 'when available seats are empty' do
+      before { allow(show).to receive(:available_seats).and_return([]) }
+
+      it 'returns false' do
+        expect(show.seat_available?).to be false
+      end
+    end
+
+    context 'when available seats are not empty' do
+      before { allow(show).to receive(:available_seats).and_return(['A1']) }
+
+      it 'returns true' do
+        expect(show.seat_available?).to be true
+      end
+    end
+  end
+
+  describe '#random_available_seat' do
+    let(:seat_numbers) { ['A1', 'A2', 'A3'] }
+
+    before { allow(show).to receive(:available_seats).and_return(seat_numbers) }
+
+    it 'returns a random available seat' do
+      random_seat = show.random_available_seat
+      expect(seat_numbers).to include(random_seat)
+    end
+  end
 end
