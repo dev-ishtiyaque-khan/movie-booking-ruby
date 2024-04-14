@@ -17,6 +17,7 @@ class MovieBookingApp
 
   def run
     setup
+    UserInterface.new(app_container: self).call
   end
 
   def book_ticket(show)

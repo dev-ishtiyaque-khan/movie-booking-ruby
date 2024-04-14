@@ -6,6 +6,8 @@ require './lib/services/movies_importer_service'
 RSpec.describe MovieBookingApp do
   subject { described_class.instance }
 
+  before { allow_any_instance_of(UserInterface).to receive(:call) }
+
   describe '#run' do
     it 'calls MoviesImporterService.import with MOVIES_FILE_PATH' do
       expect(MoviesImporterService).to receive(:import).with(MovieBookingApp::MOVIES_FILE_PATH)

@@ -34,3 +34,18 @@ Before running the application, ensure you have Ruby installed on your system.
     bin/executor
     ```
 3. Follow the prompts to browse movies, select a movie and book/cancel ticket.
+
+### Future Enhancements
+
+1. **User Authentication and Authorization**:
+   - Enhance the system to support multiple users by implementing user authentication and authorization.
+   - Users can sign up for an account, log in securely, and access personalized features such as booking history and book tickets.
+
+2. **Admin Interface**:
+   - Introduce an admin interface for managing movies, shows, and user accounts.
+   - Admins can add new movies, shows and update existing show schedules.
+
+3. **File Storage for Data Persistence**:
+   - Implement a file storage mechanism using structured JSON or YAML files for improved data storage and retrieval.
+   - Migrate from CSV files to structured formats for better organization, scalability, and ease of maintenance.
+   - Ensure that booking, cancellation, and movie related operations persist data to files, providing a reliable storage solution.
