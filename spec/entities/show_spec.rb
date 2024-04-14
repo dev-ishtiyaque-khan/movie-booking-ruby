@@ -1,3 +1,4 @@
+require './lib/entities/movie'
 require './lib/entities/show'
 
 RSpec.describe Show do
