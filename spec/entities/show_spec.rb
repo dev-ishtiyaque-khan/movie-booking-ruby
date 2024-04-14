@@ -78,4 +78,26 @@ RSpec.describe Show do
       expect(seat_numbers).to include(random_seat)
     end
   end
+
+  describe '#release_seat' do
+    let(:show) { described_class.new(movie: double('Movie'), show_time: show_time, total_capacity: 100) }
+
+    context 'when the seat is not already released' do
+      before { allow(show).to receive(:available_seats).and_return(['A1', 'A2', 'B1', 'B2']) }
+
+      it 'releases the seat and sorts available seats' do
+        show.release_seat('B1')
+        expect(show.available_seats).to eq(['A1', 'A2', 'B1', 'B2'])
+      end
+    end
+
+    context 'when the seat is already released' do
+      before { allow(show).to receive(:available_seats).and_return(['A1', 'A2', 'B1', 'C1', 'B2']) }
+
+      it 'does not add the seat again' do
+        show.release_seat('C1')
+        expect(show.available_seats).to eq(['A1', 'A2', 'B1', 'C1', 'B2'])
+      end
+    end
+  end
 end

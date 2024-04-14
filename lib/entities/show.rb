@@ -26,6 +26,13 @@ class Show
     available_seats.delete(seat_number)
   end
 
+  def release_seat(seat_number)
+    return if available_seats.include?(seat_number)
+
+    available_seats << seat_number
+    sort_available_seats!
+  end
+
   def seat_available?
     !available_seats.empty?
   end
@@ -61,5 +68,9 @@ class Show
     end
 
     seats
+  end
+
+  def sort_available_seats!
+    available_seats.sort_by! { |seat| [seat[/[A-Z]+/], seat[/\d+/].to_i] }
   end
 end
