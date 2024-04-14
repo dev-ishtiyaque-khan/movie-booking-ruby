@@ -1,5 +1,3 @@
-# spec/file_parser_spec.rb
-
 require './lib/parsers/file_parser'
 
 RSpec.describe FileParser do

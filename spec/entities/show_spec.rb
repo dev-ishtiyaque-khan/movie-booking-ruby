@@ -1,5 +1,3 @@
-# spec/show_spec.rb
-
 require './lib/entities/show'
 
 RSpec.describe Show do

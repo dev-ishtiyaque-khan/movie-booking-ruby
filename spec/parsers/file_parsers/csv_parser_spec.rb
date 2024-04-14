@@ -1,5 +1,3 @@
-# spec/file_parser/csv_parser_spec.rb
-
 require './lib/parsers/file_parsers/csv_parser'
 
 RSpec.describe FileParser::CSVParser do
@@ -9,10 +7,10 @@ RSpec.describe FileParser::CSVParser do
     it 'parses the CSV file and yields each row to the provided block' do
       data = described_class.load(file_path) do |row|
         {
-          title: row['Title'],
-          genre: row['Genre'],
-          total_capacity: row['Total Capacity'].to_i,
-          show_times: row['Showtimes'].split(',').map(&:strip)
+          title: row['title'],
+          genre: row['genre'],
+          total_capacity: row['totalcapacity'].to_i,
+          show_times: row['showtimes'].split(',').map(&:strip)
         }
       end
 
