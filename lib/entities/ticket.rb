@@ -2,7 +2,7 @@
 
 # Represents a ticket with a show and seat number.
 class Ticket
-  attr_reader :show, :seat_number
+  attr_reader :id, :show, :seat_number
   attr_accessor :status
 
   TICKET_STATUSES = [
@@ -11,6 +11,7 @@ class Ticket
   ].freeze
 
   def initialize(show, seat_number)
+    @id = generate_id
     @show = show
     @seat_number = seat_number
     @status = TICKET_BOOKED
@@ -21,10 +22,16 @@ class Ticket
   end
 
   def to_s
-    "[#{status}] #{show.movie_title} #{show.formatted_show_time} (#{seat_number})"
+    "#{id}: [#{status}] #{show.movie_title} #{show.formatted_show_time} (#{seat_number})"
   end
 
   def cancel_ticket!
     self.status = TICKET_CANCELED
+  end
+
+  private
+
+  def generate_id
+    (Time.now.to_i + rand(1000..10_000_000))
   end
 end

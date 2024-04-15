@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/entities/ticket'
 require './lib/entities/show'
 
@@ -8,8 +10,10 @@ RSpec.describe Ticket do
   let(:seat_number) { 'A1' }
 
   describe '#to_s' do
+    before { allow_any_instance_of(described_class).to receive(:generate_id).and_return(1_717_111_167) }
+
     it 'returns a string representation of the ticket' do
-      expect(subject.to_s).to eq('[Booked] The Matrix 2024-04-15 20:00:00 (A1)')
+      expect(subject.to_s).to eq('1717111167: [Booked] The Matrix 2024-04-15 20:00:00 (A1)')
     end
   end
 

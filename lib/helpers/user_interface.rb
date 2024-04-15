@@ -106,10 +106,10 @@ class UserInterface
 
     data.each do |item|
       item = if block_given?
-        block.call(item)
-      else
-        { name: item.to_s, value: item }
-      end
+               block.call(item)
+             else
+               { name: item.to_s, value: item }
+             end
       options.unshift(item)
     end
 

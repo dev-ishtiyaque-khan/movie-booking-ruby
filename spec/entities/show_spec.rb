@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/entities/movie'
 require './lib/entities/show'
 

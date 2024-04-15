@@ -13,7 +13,7 @@ class MoviesImporterService
       movie = Movie.new(title: row['title'], genre: row['genre'])
 
       show_times.each do |show_time|
-        show = Show.new(movie: movie, show_time: show_time, total_capacity: row['totalcapacity'].to_i)
+        show = Show.new(movie:, show_time:, total_capacity: row['totalcapacity'].to_i)
         movie.add_show(show)
       end
 

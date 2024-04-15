@@ -14,6 +14,6 @@ class BookTicketService
 
     show.reserve_seat(seat_number)
 
-    { success: true, ticket: ticket, message: '🎉 Ticket booked successfully! 🎉' }
+    { success: true, ticket:, message: '🎉 Ticket booked successfully! 🎉' }
   end
 end

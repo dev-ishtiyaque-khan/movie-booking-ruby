@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/entities/movie'
 
 RSpec.describe Movie do

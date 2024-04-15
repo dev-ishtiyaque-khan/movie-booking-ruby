@@ -21,14 +21,14 @@ class MovieBookingApp
   end
 
   def book_ticket(show)
-    result = BookTicketService.call(show: show)
+    result = BookTicketService.call(show:)
     tickets << result[:ticket] if result[:success]
 
     result
   end
 
   def cancel_ticket(ticket)
-    CancelTicketService.call(ticket: ticket)
+    CancelTicketService.call(ticket:)
   end
 
   def prompt
