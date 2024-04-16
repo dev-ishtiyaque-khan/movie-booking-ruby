@@ -1,0 +1,7 @@
+Layout/LineLength:
+  Max: 120
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+Metrics/AbcSize:
+  Max: 21
